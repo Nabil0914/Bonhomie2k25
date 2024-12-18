@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonhomie Sports Event</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card-container {
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-front {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .card-back {
+            background-color: #4A90E2;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transform: rotateY(180deg);
+            padding: 20px;
+        }
+
+        .card img {
+            border-radius: 10px;
+            max-height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card img:hover {
+            transform: scale(1.1);
+        }
+
+        .card-back button {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #4A90E2;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .card-back button:hover {
+            background-color: #4A90E2;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="relative bg-cover bg-center h-screen" style="background-image: url('images/background.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 py-32 text-center text-white relative z-10">
+            <h1 class="text-5xl font-extrabold">Welcome to Bonhomie 2025</h1>
+            <p class="text-xl mt-4">The ultimate sports extravaganza!</p>
+            <a href="#about" class="mt-6 inline-block px-8 py-3 bg-blue-600 text-white rounded-lg text-lg hover:bg-blue-500">Learn More</a>
+        </div>
+    </div>
+    <section id="sportsCarousel" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-3xl font-semibold text-gray-800">Boys Individual Sports Events</h2>
+            <div class="flex flex-wrap justify-center gap-8 mt-10">
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/chess.jpg" alt="Chess" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Chess</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Chess</h4>
+                            <button onclick="boyschess()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/pushup.jpg" alt="Pushups" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Pushups</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Pushups</h4>
+                            <button onclick="boyspushup()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/disscussthrow.png" alt="Discuss Throw" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Discuss Throw</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Discuss Throw</h4>
+                            <button onclick="boysdiscussthrow()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/running.png" alt="Race 100m" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Race 100m</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Race 100m</h4>
+                            <button onclick="boysrace()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/shotput.png" alt="Shot Put" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Shot Put</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Shot Put</h4>
+                            <button onclick="boysshotput()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/badminton.jpg" alt="Badminton" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Badminton</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Badminton</h4>
+                            <button onclick="boysbadminton()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/weight.png" alt="Weight Lifting" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Weight Lifting</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Weight Lifting</h4>
+                            <button onclick="boysweightlifting()">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sportsCarousel" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-3xl font-semibold text-gray-800">Boys Group Sports Events</h2>
+            <div class="flex flex-wrap justify-center gap-8 mt-10">
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/cricket.jpg" alt="Cricket" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Box Cricket</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Box Cricket</h4>
+                            <button onclick="boysboxcricket()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/football.png" alt="football" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Football</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Football</h4>
+                            <button onclick="boysfootball()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/relayy.jpg" alt="Relay" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Relay Race</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Relay Race</h4>
+                            <button onclick="boysrelay()">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sportsCarousel" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-3xl font-semibold text-gray-800">Girls Individual Sports Events</h2>
+            <div class="flex flex-wrap justify-center gap-8 mt-10">
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/chess.jpg" alt="Chess" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Chess</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Chess</h4>
+                            <button onclick="girlschess()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/disscussthrow.png" alt="Discuss Throw" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Discuss Throw</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Discuss Throw</h4>
+                            <button onclick="girlsdiscuss()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/running.png" alt="Race 100m" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Race 100m</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Race 100m</h4>
+                            <button onclick="girlsrace()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/shotput.png" alt="Shot Put" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Shot Put</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Shot Put</h4>
+                            <button onclick="girlsshotput()">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 h-80 card-container">
+                    <div class="card">
+                        <div class="card-face card-front">
+                            <img src="images/badminton.jpg" alt="Shot Put" class="w-full h-48 rounded-lg">
+                            <h4 class="text-xl font-semibold mt-4">Badminton</h4>
+                        </div>
+                        <div class="card-face card-back">
+                            <h4 class="text-2xl font-bold mb-10">Badminton</h4>
+                            <button onclick="girlsbadminton()">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section id="sportsCarousel" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-center text-3xl font-semibold text-gray-800">Girls Group Sports Events</h2>
+                <div class="flex flex-wrap justify-center gap-8 mt-10">
+                    <div class="w-72 h-80 card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <img src="images/cricket.jpg" alt="cricket" class="w-full h-48 rounded-lg">
+                                <h4 class="text-xl font-semibold mt-4">Box Cricket</h4>
+                            </div>
+                            <div class="card-face card-back">
+                                <h4 class="text-2xl font-bold mb-10">Box Cricket</h4>
+                                <button onclick="girlsboxcricket()">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-72 h-80 card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <img src="images/football.png" alt="football" class="w-full h-48 rounded-lg">
+                                <h4 class="text-xl font-semibold mt-4">Football</h4>
+                            </div>
+                            <div class="card-face card-back">
+                                <h4 class="text-2xl font-bold mb-10">Football</h4>
+                                <button onclick="girlsfootball()">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-72 h-80 card-container">
+                        <div class="card">
+                            <div class="card-face card-front">
+                                <img src="images/relayy.jpg" alt="Relay" class="w-full h-48 rounded-lg">
+                                <h4 class="text-xl font-semibold mt-4">Relay Race</h4>
+                            </div>
+                            <div class="card-face card-back">
+                                <h4 class="text-2xl font-bold mb-10">Relay Race</h4>
+                                <button onclick="girlsrelay()">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <section id="schedule" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">Event Schedule</h2>
+            <div class="mt-8 space-y-6">
+                <div class="flex justify-between items-center bg-gray-100 rounded-lg p-6">
+                    <div>
+                        <h4 class="text-xl text-gray-800 font-semibold">9:00 AM - Opening Ceremony</h4>
+                        <p class="text-gray-600">Ceremonial march and special performances.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl text-gray-800 font-semibold">Venue: Football Ground</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">What Participants Say</h2>
+            <div class="flex flex-wrap justify-center gap-8 mt-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-md">
+                    <p class="text-lg text-gray-600">"Bonhomie was an amazing experience! The organization, games, and atmosphere were all top-notch."</p>
+                    <h4 class="text-xl font-bold text-gray-800 mt-4">- John Doe</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold">Get in Touch</h2>
+            <p class="text-lg mt-4">Have questions? Reach out to us today!</p>
+            <form class="mt-8 space-y-6">
+                <input type="text" placeholder="Your Name" class="w-full p-4 rounded-md bg-gray-100 text-gray-800">
+                <input type="email" placeholder="Your Email" class="w-full p-4 rounded-md bg-gray-100 text-gray-800">
+                <textarea placeholder="Your Message" rows="4" class="w-full p-4 rounded-md bg-gray-100 text-gray-800"></textarea>
+                <button type="submit" class="w-full py-3 bg-white text-blue-600 font-semibold rounded-md hover:bg-gray-200">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        function boyschess() {
+        window.location.href = 'boysindividualgames/boyschess.html';
+    }
+    
+    function boyspushup() {
+        window.location.href = 'boysindividualgames/boyspushups.html';
+    }
+    
+    function boysdiscussthrow() {
+        window.location.href = 'boysindividualgames/boysdiscuss.html';
+    }
+    
+    function boysrace() {
+        window.location.href = 'boysindividualgames/boysrace.html';
+    }
+    
+    function boysshotput() {
+        window.location.href = 'boysindividualgames/boysshotput.html';
+    }
+    
+    function boysbadminton() {
+        window.location.href = 'boysindividualgames/boysbadminton.html';
+    }
+    
+    function boysweightlifting() {
+        window.location.href = 'boysindividualgames/boysweightlifting.html';
+    }
+    
+    function girlschess() {
+        window.location.href = 'girlsindividualgames/girlschess.html';
+    }
+    
+    function girlsrace() {
+        window.location.href = 'girlsindividualgames/girlsrace.html';
+    }
+    
+    function girlsshotput() {
+        window.location.href = 'girlsindividualgames/girlsshotput.html';
+    }
+    
+    function girlsbadminton() {
+        window.location.href = 'girlsindividualgames/girlsbadminton.html';
+    }
+    
+    function girlsdiscuss() {
+        window.location.href = 'girlsindividualgames/girlsdiscuss.html';
+    }
+    
+    
+    function  boysboxcricket() {
+        window.location.href = 'boysgroupgames/boysboxcricket.html';
+    }
+    function  boysfootball() {
+        window.location.href = 'boysgroupgames/boysfootball.html';
+    }
+    function  boysrelay() {
+        window.location.href = 'boysgroupgames/boysrelay.html';
+    }
+    function  girlsboxcricket() {
+        window.location.href = 'girlsgroupgames/girlsboxcricket.html';
+    }
+    function  girlsfootball() {
+        window.location.href = 'girlsgroupgames/girlsfootball.html';
+    }
+    function  girlsrelay() {
+        window.location.href = 'girlsgroupgames/girlsrelay.html';
+    }
+        </script>
+
+</body>
+</html>

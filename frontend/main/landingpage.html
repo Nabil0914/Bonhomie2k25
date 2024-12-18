@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonhomie Sports Event</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slide-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in {
+            animation: slide-in 1s ease-out;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fade-in 2s ease-in;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-blue-600 to-orange-600 py-4 fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="text-2xl font-bold text-white">Bonhomie 2025</div>
+            <ul class="hidden md:flex space-x-8 text-white">
+                <li><a href="#logo-section" class="hover:underline">Home</a></li>
+                <li><a href="#events-section" class="hover:underline">Events</a></li>
+                <li><a href="#glimpses-section" class="hover:underline">Glimpses</a></li>
+                <li><a href="#testimonials" class="hover:underline">Testimonials</a></li>
+                <li><a href="#contact-section" class="hover:underline">Contact</a></li>
+            </ul>
+            <button class="md:hidden text-2xl text-white" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="bg-hero bg-cover bg-center min-h-screen flex flex-col justify-center items-center text-white text-center" style="background-image: url('https://via.placeholder.com/1920x1080');">
+        <h1 class="text-5xl font-extrabold drop-shadow-lg">Bonhomie 2025</h1>
+        <p class="mt-4 text-xl font-light max-w-2xl">Unite through sports, culture, and unforgettable moments. Join us and be part of the legacy!</p>
+        <a href="#logo-section" class="mt-8 px-8 py-3 bg-white text-blue-600 font-semibold text-lg rounded-full shadow-lg hover:scale-105 transform duration-300">
+            Register Now
+        </a>
+    </header>
+
+    <!-- Logo Section -->
+    <section id="logo-section" class="py-20 bg-white text-center shadow-lg">
+        <img src="images/Bonhomie.png" alt="Event Logo" class="mx-auto mb-6 max-w-xs hover:scale-110 transform duration-500">
+        <h2 class="text-3xl font-bold mb-4">Register for Thrilling Events</h2>
+        <div class="flex justify-center space-x-4 mb-6">
+            <button onclick="sports()" class="bg-gradient-to-r from-green-400 to-green-600 text-white px-6 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">Sports</button>
+            <button class="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-6 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">Cultural</button>
+        </div>
+        <p class="text-gray-700 text-lg max-w-lg mx-auto">Be a part of the journey where talent meets opportunity, and fun knows no bounds.</p>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events-section" class="py-20 bg-gray-100">
+        <h2 class="text-4xl font-bold text-blue-600 text-center mb-8 slide-in">Our Events</h2>
+        <p class="text-gray-700 text-center max-w-2xl mx-auto mb-10">Explore a variety of thrilling events where you can compete, connect, and celebrate the spirit of sports and culture.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto fade-in">
+            <div class="relative group">
+                <img src="https://via.placeholder.com/400x250" alt="Football Tournament" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:scale-105 transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 rounded-lg group-hover:opacity-100 duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <h3 class="text-xl font-bold">Football Tournament</h3>
+                    <p class="text-sm">Test your team's spirit and skills in an exhilarating football showdown!</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <img src="https://via.placeholder.com/400x250" alt="Cricket Championship" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:scale-105 transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 rounded-lg group-hover:opacity-100 duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <h3 class="text-xl font-bold">Cricket Championship</h3>
+                    <p class="text-sm">Step into the arena of excitement and experience the thrill of cricket.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <img src="https://via.placeholder.com/400x250" alt="Table Tennis" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:scale-105 transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 rounded-lg group-hover:opacity-100 duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <h3 class="text-xl font-bold">Table Tennis</h3>
+                    <p class="text-sm">Show your finesse in this fast-paced game of precision and agility.</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <img src="https://via.placeholder.com/400x250" alt="Badminton" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:scale-105 transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 rounded-lg group-hover:opacity-100 duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <h3 class="text-xl font-bold">Badminton</h3>
+                    <p class="text-sm">Take to the court and showcase your skills in an electrifying match!</p>
+                </div>
+            </div>
+            <div class="relative group">
+                <img src="https://via.placeholder.com/400x250" alt="Cultural Dance Show" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:scale-105 transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 rounded-lg group-hover:opacity-100 duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <h3 class="text-xl font-bold">Cultural Dance Show</h3>
+                    <p class="text-sm">Celebrate diversity and tradition with captivating cultural dances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="glimpses-section" class="py-20 bg-gray-100">
+        <h2 class="text-4xl font-bold text-blue-600 text-center mb-8">Glimpses of the Past</h2>
+        <p class="text-gray-700 text-center max-w-2xl mx-auto mb-10">Relive the unforgettable moments from our previous events. Each event captured the energy, enthusiasm, and unity we aim to bring every year!</p>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div class="flex flex-col items-center">
+                <img src="https://via.placeholder.com/400x250" alt="Unity on the Field" class="rounded-lg shadow-lg w-full mb-4 hover:scale-105 transform transition duration-300">
+                <p class="text-gray-600 text-center">"Unity on the Field" - A thrilling snapshot of our football championship finale, capturing the spirit of teamwork and passion.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="https://via.placeholder.com/400x250" alt="Victory Cheers" class="rounded-lg shadow-lg w-full mb-4 hover:scale-105 transform transition duration-300">
+                <p class="text-gray-600 text-center">"Victory Cheers" - The cricket champions celebrated their hard-earned victory in last year’s unforgettable tournament.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="https://via.placeholder.com/400x250" alt="Cultural Night" class="rounded-lg shadow-lg w-full mb-4 hover:scale-105 transform transition duration-300">
+                <p class="text-gray-600 text-center">"Cultural Night" - A mesmerizing evening featuring vibrant dance performances and rich cultural displays.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="https://via.placeholder.com/400x250" alt="Table Tennis Finals" class="rounded-lg shadow-lg w-full mb-4 hover:scale-105 transform transition duration-300">
+                <p class="text-gray-600 text-center">"Table Tennis Finals" - The energy and intensity of the players during the championship match were unmatched.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-section" class="py-20 bg-white">
+        <h2 class="text-4xl font-bold text-blue-600 text-center mb-8">Contact Us</h2>
+        <form class="max-w-2xl mx-auto space-y-6">
+            <input type="text" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-400">
+            <input type="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-400">
+            <textarea placeholder="Your Message" rows="6" class="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-400"></textarea>
+            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 duration-300">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white text-center py-6">
+        <p class="text-sm">&copy; 2025 Bonhomie Sports Event. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function sports() {
+            window.location.href = 'Sports.html';
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('ul');
+            navLinks.classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>

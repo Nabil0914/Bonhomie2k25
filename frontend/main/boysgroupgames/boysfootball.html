@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Cricket Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-orange-500 to-indigo-600 font-sans text-sm">
+
+    <div class="container mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg max-w-3xl">
+        <h2 class="text-center text-orange-500 font-bold text-xl mb-4">Boys Football Registration Form</h2>
+
+        <form id="boxCricketForm" action="submit_registration.php" method="POST">
+            <h4 class="text-lg text-gradient-to-r from-orange-500 to-indigo-600 mb-2">Team Lead Information</h4>
+
+            <div class="mb-4">
+                <label for="teamLeadName" class="block text-gray-700 font-semibold mb-1">Team Lead Name</label>
+                <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="teamLeadName" name="teamLeadName" placeholder="Enter team lead's name" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="year" class="block text-gray-700 font-semibold mb-1">Year</label>
+                <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="year" name="year" required>
+                    <option value="">Select Year</option>
+                    <option value="FE">FE</option>
+                    <option value="SE">SE</option>
+                    <option value="TE">TE</option>
+                    <option value="BE">BE</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="department" class="block text-gray-700 font-semibold mb-1">Department</label>
+                <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="CO">CO</option>
+                    <option value="AIML">AIML</option>
+                    <option value="DS">DS</option>
+                    <option value="CIVIL">CIVIL</option>
+                    <option value="ME">ME</option>
+                    <option value="ELECTRICAL">ELECTRICAL</option>
+                    <option value="ECS">ECS</option>
+                    <option value="ARCHI">ARCHI</option>
+                    <option value="D.PHARMA">D.PHARMA</option>
+                    <option value="PHARMACY">PHARMACY</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="rollNo" class="block text-gray-700 font-semibold mb-1">Roll Number</label>
+                <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="rollNo" name="rollNo" placeholder="Enter roll number" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-semibold mb-1">Email</label>
+                <input type="email" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="email" name="email" placeholder="Enter email" required>
+            </div>
+
+            <h4 class="text-lg text-gradient-to-r from-orange-500 to-indigo-600 mb-2">Team Member Details</h4>
+            <p class="text-red-500 mb-4">Note: Only 7 members</p>
+
+            <div id="teamMembers">
+                <div class="mb-4">
+                    <label for="memberName1" class="block text-gray-700 font-semibold mb-1">Member 1 Name</label>
+                    <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberName1" name="memberName[]" placeholder="Enter member name" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="memberRollNo1" class="block text-gray-700 font-semibold mb-1">Member 1 Roll Number</label>
+                    <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberRollNo1" name="memberRollNo[]" placeholder="Enter roll number" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="memberDepartment1" class="block text-gray-700 font-semibold mb-1">Member 1 Department</label>
+                    <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberDepartment1" name="memberDepartment[]" required>
+                        <option value="">Select Department</option>
+                        <option value="CO">CO</option>
+                        <option value="AIML">AIML</option>
+                        <option value="DS">DS</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="ME">ME</option>
+                        <option value="ELECTRICAL">ELECTRICAL</option>
+                        <option value="ECS">ECS</option>
+                        <option value="ARCHI">ARCHI</option>
+                        <option value="D.PHARMA">D.PHARMA</option>
+                        <option value="PHARMACY">PHARMACY</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="memberYear1" class="block text-gray-700 font-semibold mb-1">Member 1 Year</label>
+                    <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberYear1" name="memberYear[]" required>
+                        <option value="">Select Year</option>
+                        <option value="FE">FE</option>
+                        <option value="SE">SE</option>
+                        <option value="TE">TE</option>
+                        <option value="BE">BE</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Add more members dynamically -->
+            <button type="button" class="btn bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 mt-4" onclick="addMember()">Add Team Member</button>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-6">
+                <button type="submit" class="btn bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let memberCount = 1;
+
+        function addMember() {
+            if (memberCount >= 7) {
+                alert("You can only add up to 7 members.");
+                return;
+            }
+            memberCount++;
+            const teamMembersDiv = document.getElementById('teamMembers');
+
+            const memberTemplate = `
+                <div class="mb-4">
+                    <label for="memberName${memberCount}" class="block text-gray-700 font-semibold mb-1">Member ${memberCount} Name</label>
+                    <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberName${memberCount}" name="memberName[]" placeholder="Enter member name" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="memberRollNo${memberCount}" class="block text-gray-700 font-semibold mb-1">Member ${memberCount} Roll Number</label>
+                    <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberRollNo${memberCount}" name="memberRollNo[]" placeholder="Enter roll number" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="memberDepartment${memberCount}" class="block text-gray-700 font-semibold mb-1">Member ${memberCount} Department</label>
+                    <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberDepartment${memberCount}" name="memberDepartment[]" required>
+                        <option value="">Select Department</option>
+                        <option value="CO">CO</option>
+                        <option value="AIML">AIML</option>
+                        <option value="DS">DS</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="ME">ME</option>
+                        <option value="ELECTRICAL">ELECTRICAL</option>
+                        <option value="ECS">ECS</option>
+                        <option value="ARCHI">ARCHI</option>
+                        <option value="D.PHARMA">D.PHARMA</option>
+                        <option value="PHARMACY">PHARMACY</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="memberYear${memberCount}" class="block text-gray-700 font-semibold mb-1">Member ${memberCount} Year</label>
+                    <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberYear${memberCount}" name="memberYear[]" required>
+                        <option value="">Select Year</option>
+                        <option value="FE">FE</option>
+                        <option value="SE">SE</option>
+                        <option value="TE">TE</option>
+                        <option value="BE">BE</option>
+                    </select>
+                </div>
+            `;
+
+            const div = document.createElement('div');
+            div.innerHTML = memberTemplate;
+            teamMembersDiv.appendChild(div);
+        }
+    </script>
+
+</body>
+</html>
