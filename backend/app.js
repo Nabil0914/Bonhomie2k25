@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
-import registrationRoutes from "./routes/registrationRoutes.js";
 import connectDB from "./config/db.js";
+import {individual ,group} from "./routes/registrationRoutes.js"
 import cors from 'cors';
 
 
@@ -15,7 +15,8 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.use('/api', registrationRoutes);
+app.post('/real',individual);
+app.post('/group',group)
 
 // Server listening on the defined port
 const PORT = process.env.PORT;

@@ -1,21 +1,21 @@
 import mongoose from "mongoose";
 
 const GroupSportsRegistrationSchema = new mongoose.Schema({
-    eventName: { 
-        type: String, 
-        required: true 
-    },
-    eventType: { 
-        type: String, 
-        enum: ['boys', 'girls'], 
-        required: true 
-    },
-    eventCategory: { 
-        type: String, 
-        enum: ['group'], 
-        required: true 
-    },
-    teamLeader: {
+  eventName: {
+    type: String,
+    required: true
+  },
+  eventType: {
+    type: String,
+    enum: ['boys', 'girls'],
+    required: true
+  },
+  eventCategory: {
+    type: String,
+    enum: ['group'],
+    required: true
+  },
+  teamLeader: {
     name: { type: String, required: true },
     year: { type: String, required: true },
     department: { type: String, required: true },

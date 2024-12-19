@@ -117,5 +117,48 @@
             </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById("ChessForm").addEventListener("submit", async (event) => {
+          event.preventDefault(); // Prevent default form submission
+      
+          const formData = new FormData(event.target);
+      
+          // Prepare data for API
+          const data = {
+            participantName: formData.get("fullName"),
+            year: formData.get("Year"),
+            department: formData.get("department"),
+            rollNo: formData.get("rollNo"),
+            email: formData.get("email"),
+            contactNo: formData.get("Contact"),
+            eventName: "Chess",
+            eventType: "boys",
+            eventCategory: "individual",
+          };
+      
+          try {
+            const response = await fetch("http://localhost:3000/real", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+      
+            const result = await response.json();
+            if (result.success) {
+              alert("Registration successful!");
+              event.target.reset(); // Clear the form
+            } else {
+              alert(`Error: ${result.message}`);
+            }
+          } catch (error) {
+            alert("Something went wrong. Please try again later.");
+            console.error("Error:", error);
+          }
+        });
+      </script>
+      
 </body>
 </html>

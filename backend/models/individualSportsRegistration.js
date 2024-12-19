@@ -38,11 +38,11 @@ const IndividualSportsRegistrationSchema = new mongoose.Schema({
     contactNo: { 
         type: String, 
         required: true 
-    },
-    registrationDate: { 
-        type: Date, 
-        default: Date.now 
-    },
+    }
+    // registrationDate: { 
+    //     type: Date, 
+    //     default: Date.now 
+    // },
 })
 
 const IndividualSportsRegistration = mongoose.model("IndividualSportsRegistration", IndividualSportsRegistrationSchema);
