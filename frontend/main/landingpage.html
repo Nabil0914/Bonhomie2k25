@@ -67,7 +67,7 @@
         <h2 class="text-3xl font-bold mb-4">Register for Thrilling Events</h2>
         <div class="flex justify-center space-x-4 mb-6">
             <button onclick="sports()" class="bg-gradient-to-r from-green-400 to-green-600 text-white px-6 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">Sports</button>
-            <button class="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-6 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">Cultural</button>
+            <button onclick="cultural()" class="bg-gradient-to-r from-blue-400 to-blue-600 text-white px-6 py-3 rounded-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">Cultural</button>
         </div>
         <p class="text-gray-700 text-lg max-w-lg mx-auto">Be a part of the journey where talent meets opportunity, and fun knows no bounds.</p>
     </section>
@@ -164,6 +164,9 @@
             window.location.href = 'Sports.html';
         }
 
+        function cultural() {
+            window.location.href = 'Cultural.html';
+        }
         function toggleMenu() {
             const navLinks = document.querySelector('ul');
             navLinks.classList.toggle('hidden');
