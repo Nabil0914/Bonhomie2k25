@@ -15,7 +15,7 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.post('/real',individual);
+app.post('/individual-sports',individual);
 app.post('/group',group)
 
 // Server listening on the defined port

@@ -1,118 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weight Lifting Registration</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            background: linear-gradient(90deg, #FF7F41FF, #4a56a3); /* Purple to blue gradient */
-            font-family: 'Arial', sans-serif;
-            font-size: 14px; /* Reduced font size */
-        }
-        .container {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
-            max-width: 700px;
-        }
-        h2 {
-            color: #FF7F41FF; /* Soft blue */
-            font-weight: bold;
-        }
-        h7 {
-            color: red;
-        }
-        label {
-            font-weight: bold;
-            color: #555;
-        }
-        .form-control, .form-select {
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            padding: 8px;
-        }
-        .form-control:focus, .form-select:focus {
-            border-color: #5a67d8;
-            box-shadow: 0 0 5px rgba(90, 103, 216, 0.5);
-        }
-        h4 {
-            color: linear-gradient(90deg, #FF7F41FF, #4a56a3);
-        }
-        button {
-            background: linear-gradient(90deg, #FF7F41FF, #4a56a3); /* Blue gradient */
-            border: none;
-            padding: 8px 16px;
-            font-size: 14px; /* Reduced font size */
-            color: #fff;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        /*button:hover {
+      body {
+        background: linear-gradient(
+          90deg,
+          #ff7f41ff,
+          #4a56a3
+        ); /* Purple to blue gradient */
+        font-family: "Arial", sans-serif;
+        font-size: 14px; /* Reduced font size */
+      }
+      .container {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        margin-top: 50px;
+        max-width: 700px;
+      }
+      h2 {
+        color: #ff7f41ff; /* Soft blue */
+        font-weight: bold;
+      }
+      h7 {
+        color: red;
+      }
+      label {
+        font-weight: bold;
+        color: #555;
+      }
+      .form-control,
+      .form-select {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 8px;
+      }
+      .form-control:focus,
+      .form-select:focus {
+        border-color: #5a67d8;
+        box-shadow: 0 0 5px rgba(90, 103, 216, 0.5);
+      }
+      h4 {
+        color: linear-gradient(90deg, #ff7f41ff, #4a56a3);
+      }
+      button {
+        background: linear-gradient(
+          90deg,
+          #ff7f41ff,
+          #4a56a3
+        ); /* Blue gradient */
+        border: none;
+        padding: 8px 16px;
+        font-size: 14px; /* Reduced font size */
+        color: #fff;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+      }
+      /*button:hover {
             transform: scale(1.05);
             background: linear-gradient(90deg, #4a56a3, #3b4795);
         }*/
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h2 class="text-center">Boys Weight Lifting Registration Form</h2>
-        <form id="weightliftingForm" action="submit_registration.php" method="POST">
-            <div class="mb-3">
-                <label for="fullName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
-            </div>
-            <div class="mb-3">
-                <label for="year" class="form-label">Year</label>
-                <select class="form-select" id="year" name="year" required>
-                    <option value="">Select Year</option>
-                    <option value="FE">FE</option>
-                    <option value="SE">SE</option>
-                    <option value="TE">TE</option>
-                    <option value="BE">BE</option>
-                </select>
-            </div>
+      <h2 class="text-center">Boys Weight Lifting Registration Form</h2>
+      <form id="weightliftingForm" method="POST">
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="Year" class="form-label">Year</label>
+          <select class="form-select" id="Year" name="Year" required>
+            <option value="">Select Year</option>
+            <option value="FE">FE</option>
+            <option value="SE">SE</option>
+            <option value="TE">TE</option>
+            <option value="BE">BE</option>
+          </select>
+        </div>
 
-            <div class="mb-3">
-                <label for="department" class="form-label">Department</label>
-                <select class="form-select" id="department" name="department" required>
-                    <option value="">Select Department</option>
-                    <option value="CO">CO</option>
-                    <option value="AIML">AIML</option>
-                    <option value="DS">DS</option>
-                    <option value="CIVIL">CIVIL</option>
-                    <option value="ME">ME</option>
-                    <option value="ELECTRICAL">ELECTRICAL</option>
-                    <option value="ECS">ECS</option>
-                    <option value="ARCHI">ARCHI</option>
-                    <option value="D.PHARMA">D.PHARMA</option>
-                    <option value="PHARMACY">PHARMACY</option>
-                </select>
-            </div>
+        <div class="mb-3">
+          <label for="department" class="form-label">Department</label>
+          <select
+            class="form-select"
+            id="department"
+            name="department"
+            required
+          >
+            <option value="">Select Department</option>
+            <option value="CO">CO</option>
+            <option value="AIML">AIML</option>
+            <option value="DS">DS</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="ME">ME</option>
+            <option value="ELECTRICAL">ELECTRICAL</option>
+            <option value="ECS">ECS</option>
+            <option value="ARCHI">ARCHI</option>
+            <option value="D.PHARMA">D.PHARMA</option>
+            <option value="PHARMACY">PHARMACY</option>
+          </select>
+        </div>
 
-            <div class="mb-3">
-                <label for="rollNo" class="form-label">Roll Number</label>
-                <input type="text" class="form-control" id="rollNo" name="rollNo" placeholder="Enter roll number" required>
-            </div>
+        <div class="mb-3">
+          <label for="rollNo" class="form-label">Roll Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="rollNo"
+            name="rollNo"
+            placeholder="Enter roll number"
+            required
+          />
+        </div>
 
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
-            </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
+        </div>
 
-            <div class="mb-3">
-                <label for="contact" class="form-label">Contact No.</label>
-                <input type="text" class="form-control" id="contact" name="contact" placeholder="Enter your contact number" required>
-            </div>
+        <div class="mb-3">
+          <label for="Contact" class="form-label">Contact No.</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Contact"
+            name="Contact"
+            placeholder="Enter your contact number"
+            required
+          />
+        </div>
 
-            <!-- Submit Button -->
-            <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary">Register</button>
-            </div>
-        </form>
+        <!-- Submit Button -->
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </form>
     </div>
-</body>
+    <script>
+      document
+        .getElementById("weightliftingForm")
+        .addEventListener("submit", async (event) => {
+          event.preventDefault(); // Prevent default form submission
+
+          const formData = new FormData(event.target);
+
+          // Prepare data for API
+          const data = {
+            participantName: formData.get("fullName"),
+            year: formData.get("Year"),
+            department: formData.get("department"),
+            rollNo: formData.get("rollNo"),
+            email: formData.get("email"),
+            contactNo: formData.get("Contact"),
+            eventName: "Weight Lifting",
+            eventType: "boys",
+            eventCategory: "individual",
+          };
+
+          try {
+            const response = await fetch(
+              "http://localhost:3000/individual-sports",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+              }
+            );
+
+            const result = await response.json();
+            if (result.success) {
+              alert("Registration successful!");
+              event.target.reset(); // Clear the form
+            } else {
+              alert(`Error: ${result.message}`);
+            }
+          } catch (error) {
+            alert("Something went wrong. Please try again later.");
+            console.error("Error:", error);
+          }
+        });
+    </script>
+  </body>
 </html>

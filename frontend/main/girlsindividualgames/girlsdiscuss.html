@@ -20,7 +20,7 @@
 <body class="min-h-screen flex items-center justify-center">
     <div class="w-full max-w-lg bg-white rounded-lg shadow-lg p-8">
         <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Girls Discuss Throw Registration Form</h2>
-        <form id="disscussthrowform" action="submit_registration.php" method="POST" class="space-y-6">
+        <form id="disscussthrowform" method="POST" class="space-y-6">
             
             <!-- Full Name -->
             <div>
@@ -125,5 +125,46 @@
             </div>
         </form>
     </div>
+    <script>
+        document.getElementById("disscussthrowform").addEventListener("submit", async (event) => {
+          event.preventDefault(); // Prevent default form submission
+      
+          const formData = new FormData(event.target);
+      
+          // Prepare data for API
+          const data = {
+            participantName: formData.get("fullName"),
+            year: formData.get("Year"),
+            department: formData.get("department"),
+            rollNo: formData.get("rollNo"),
+            email: formData.get("email"),
+            contactNo: formData.get("Contact"),
+            eventName: "Discuss Throw",
+            eventType: "girls",
+            eventCategory: "individual",
+          };
+      
+          try {
+            const response = await fetch("http://localhost:3000/individual-sports", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+      
+            const result = await response.json();
+            if (result.success) {
+              alert("Registration successful!");
+              event.target.reset(); // Clear the form
+            } else {
+              alert(`Error: ${result.message}`);
+            }
+          } catch (error) {
+            alert("Something went wrong. Please try again later.");
+            console.error("Error:", error);
+          }
+        });
+      </script>
 </body>
 </html>
