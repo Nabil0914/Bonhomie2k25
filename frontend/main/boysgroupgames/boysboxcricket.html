@@ -11,18 +11,18 @@
     <div class="container mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg max-w-3xl">
         <h2 class="text-center text-orange-500 font-bold text-xl mb-4">Boys Box Cricket Registration Form</h2>
 
-        <form id="boxCricketForm" action="submit_registration.php" method="POST">
+        <form id="boxCricketForm" method="POST">
             <!-- Team Lead Info -->
             <h4 class="text-lg text-gradient-to-r from-orange-500 to-indigo-600 mb-2">Team Lead Information</h4>
 
             <div class="mb-4">
                 <label for="teamLeadName" class="block text-gray-700 font-semibold mb-1">Team Lead Name</label>
-                <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="teamLeadName" name="teamLeadName" placeholder="Enter team lead's name" required>
+                <input type="text" id="teamLeadName" name="teamLeadName" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="teamLeadName" name="teamLeadName" placeholder="Enter team lead's name" required>
             </div>
 
             <div class="mb-4">
-                <label for="year" class="block text-gray-700 font-semibold mb-1">Year</label>
-                <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="year" name="year" required>
+                <label for="teamLeadYear" class="block text-gray-700 font-semibold mb-1">Year</label>
+                <select id="teamLeadYear" name="teamLeadYear" class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="year" name="year" required>
                     <option value="">Select Year</option>
                     <option value="FE">FE</option>
                     <option value="SE">SE</option>
@@ -32,8 +32,8 @@
             </div>
 
             <div class="mb-4">
-                <label for="department" class="block text-gray-700 font-semibold mb-1">Department</label>
-                <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="department" name="department" required>
+                <label for="teamLeadDepartment" class="block text-gray-700 font-semibold mb-1">Department</label>
+                <select id="teamLeadDepartment" name="teamLeadDepartment" class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="department" name="department" required>
                     <option value="">Select Department</option>
                     <option value="CO">CO</option>
                     <option value="AIML">AIML</option>
@@ -49,34 +49,34 @@
             </div>
 
             <div class="mb-4">
-                <label for="rollNo" class="block text-gray-700 font-semibold mb-1">Roll Number</label>
-                <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="rollNo" name="rollNo" placeholder="Enter roll number" required>
+                <label for="teamLeadRollNo" class="block text-gray-700 font-semibold mb-1">Roll Number</label>
+                <input type="text" id="teamLeadRollNo" name="teamLeadRollNo" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="rollNo" name="rollNo" placeholder="Enter roll number" required>
             </div>
 
             <div class="mb-4">
-                <label for="email" class="block text-gray-700 font-semibold mb-1">Email</label>
-                <input type="email" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="email" name="email" placeholder="Enter email" required>
+                <label for="teamLeadEmail" class="block text-gray-700 font-semibold mb-1">Email</label>
+                <input type="email" id="teamLeadEmail" name="teamLeadEmail" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="email" name="email" placeholder="Enter email" required>
             </div>
 
             <!-- Team Details -->
             <h4 class="text-lg text-gradient-to-r from-orange-500 to-indigo-600 mb-2">Team Member Details</h4>
-            <p class="text-red-500 mb-4">Note: Only 7 members</p>
+            <p class="text-red-500 mb-4">Note: Only 8 members</p>
 
             <div id="teamMembers">
                 <!-- Template for one team member -->
                 <div class="mb-4">
                     <label for="memberName1" class="block text-gray-700 font-semibold mb-1">Member 1 Name</label>
-                    <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberName1" name="memberName[]" placeholder="Enter member name" required>
+                    <input type="text" id="memberName1" name="memberName[]" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberName1" name="memberName[]" placeholder="Enter member name" required>
                 </div>
 
                 <div class="mb-4">
                     <label for="memberRollNo1" class="block text-gray-700 font-semibold mb-1">Member 1 Roll Number</label>
-                    <input type="text" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberRollNo1" name="memberRollNo[]" placeholder="Enter roll number" required>
+                    <input type="text" id="memberRollNo1" name="memberRollNo[]" class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberRollNo1" name="memberRollNo[]" placeholder="Enter roll number" required>
                 </div>
 
                 <div class="mb-4">
                     <label for="memberDepartment1" class="block text-gray-700 font-semibold mb-1">Member 1 Department</label>
-                    <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberDepartment1" name="memberDepartment[]" required>
+                    <select id="memberDepartment1" name="memberDepartment[]" class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberDepartment1" name="memberDepartment[]" required>
                         <option value="">Select Department</option>
                         <option value="CO">CO</option>
                         <option value="AIML">AIML</option>
@@ -93,7 +93,7 @@
 
                 <div class="mb-4">
                     <label for="memberYear1" class="block text-gray-700 font-semibold mb-1">Member 1 Year</label>
-                    <select class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberYear1" name="memberYear[]" required>
+                    <select id="memberYear1" name="memberYear[]" class="form-select w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" id="memberYear1" name="memberYear[]" required>
                         <option value="">Select Year</option>
                         <option value="FE">FE</option>
                         <option value="SE">SE</option>
@@ -117,8 +117,8 @@
         let memberCount = 1;
 
         function addMember() {
-            if (memberCount >= 7) {
-                alert("You can only add up to 7 members.");
+            if (memberCount >= 8) {
+                alert("You can only add up to 8 members.");
                 return;
             }
             memberCount++;
@@ -168,6 +168,79 @@
             div.innerHTML = memberTemplate;
             teamMembersDiv.appendChild(div);
         }
+
+    document.getElementById("boxCricketForm").addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(event.target);
+
+    // Collect team members' data (assuming you have input fields for multiple members)
+    const teamMembers = [];
+    const totalMembers = 8; // Adjust based on the total number of team members
+    const memberNames = formData.getAll("memberName[]");
+    const memberRollNos = formData.getAll("memberRollNo[]");
+    const memberDepartments = formData.getAll("memberDepartment[]");
+    const memberYears = formData.getAll("memberYear[]");
+
+    for (let i = 0; i < memberNames.length; i++) {
+    // Only push members who have complete data (name, rollNo, year, department)
+    if (memberNames[i] && memberRollNos[i] && memberDepartments[i] && memberYears[i]) {
+      teamMembers.push({
+        name: memberNames[i],
+        rollNo: memberRollNos[i],
+        department: memberDepartments[i],
+        year: memberYears[i],
+      });
+    }
+  }
+
+    // Check if at least one team member is provided
+    if (teamMembers.length === 0) {
+      alert("Please provide at least one team member.");
+      return;
+    }
+
+    if(teamMembers.length < 8){
+        alert("Add all the 8 members");
+        return;
+    }
+
+    // Prepare data for API
+    const data = {
+      eventName: "Box Cricket",
+      eventType: "boys",  // Update this as per the form selection
+      eventCategory: "group", // It's a group event
+      teamLeader: {
+        name: formData.get("teamLeadName"),
+        year: formData.get("teamLeadYear"),
+        department: formData.get("teamLeadDepartment"),
+        rollNo: formData.get("teamLeadRollNo"),
+        email: formData.get("teamLeadEmail"),
+      },
+      teammates: teamMembers, // Send team members as an array
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/group-sports", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data), // Convert the data to JSON string before sending
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert("Team registration successful!");
+        event.target.reset(); // Clear the form
+      } else {
+        alert(`Error: ${result.message}`);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again later.");
+      console.error("Error:", error);
+    }
+  });
     </script>
 
 </body>

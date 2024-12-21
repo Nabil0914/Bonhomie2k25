@@ -3,34 +3,31 @@ import mongoose from "mongoose";
 const GroupSportsRegistrationSchema = new mongoose.Schema({
   eventName: {
     type: String,
-    required: true
+    required: false
   },
   eventType: {
     type: String,
     enum: ['boys', 'girls'],
-    required: true
+    required: false
   },
   eventCategory: {
     type: String,
     enum: ['group'],
-    required: true
+    required: false
   },
   teamLeader: {
     name: { type: String, required: true },
     year: { type: String, required: true },
     department: { type: String, required: true },
     rollNo: { type: String, required: true },
-    email: { type: String, required: true },
-    contactNo: { type: String, required: true }
+    email: { type: String, required: true }
   },
   teammates: [
     {
       name: { type: String, required: true },
       year: { type: String, required: true },
       department: { type: String, required: true },
-      rollNo: { type: String, required: true },
-      email: { type: String, required: true },
-      contactNo: { type: String, required: true }
+      rollNo: { type: String, required: true }
     }
   ],
   registrationDate: { type: Date, default: Date.now }

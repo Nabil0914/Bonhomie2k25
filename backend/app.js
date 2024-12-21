@@ -16,7 +16,7 @@ connectDB();
 
 // Routes
 app.post('/individual-sports',individual);
-app.post('/group',group)
+app.post('/group-sports',group)
 
 // Server listening on the defined port
 const PORT = process.env.PORT;

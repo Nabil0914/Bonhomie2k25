@@ -98,10 +98,9 @@ export const group = async (req, res) => {
       department,
       rollNo,
       email,
-      contactNo,
     } = teamLeader;
 
-    if (!name || !year || !department || !rollNo || !email || !contactNo) {
+    if (!name || !year || !department || !rollNo || !email) {
       return res.status(400).json({
         success: false,
         message: "Team leader details are incomplete.",
@@ -110,8 +109,8 @@ export const group = async (req, res) => {
 
     // Validate teammates
     for (let i = 0; i < teammates.length; i++) {
-      const { name, year, department, rollNo, email, contactNo } = teammates[i];
-      if (!name || !year || !department || !rollNo || !email || !contactNo) {
+      const { name, year, department, rollNo} = teammates[i];
+      if (!name || !year || !department || !rollNo) {
         return res.status(400).json({
           success: false,
           message: `Teammate ${i + 1} details are incomplete.`,
